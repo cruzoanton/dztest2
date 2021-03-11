@@ -12,10 +12,10 @@ public class BaseTest {
     protected User validUser= UserFactory.getValidUser();
     protected Mail validMail = MailFactory.getValidMail();
     protected App app=new App();
-
+    
 
     @AfterSuite
     public void afterSuite() {
-  //      app.common.stopApp();
+   //     app.common.stopApp();
     }
 }

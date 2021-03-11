@@ -13,8 +13,11 @@ public class NewMailPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"text\"]")
     private WebElement textMail;
 
-    @FindBy(xpath = "/html/body/div[4]/div[6]/div[1]/div[1]/p[3]/input[1]")
+    @FindBy(name = "send")
     private WebElement btnSend;
+
+    @FindBy(xpath = "/html/body/div[1]/div[6]/div[2]/div/div/div[2]/div[2]/div[3]/ul/li[1]/a")
+    private WebElement inbox;
 
 
     public void sendMail(String reciever,String subject,String text) {
@@ -22,6 +25,9 @@ public class NewMailPage extends BasePage{
         subjectMail.sendKeys(subject);
         textMail.sendKeys(text);
         btnSend.click();
+    }
+         public void goToInbox() {  //не стал создавать новую страницу, поэтому переходим из этой
+         inbox.click();
     }
 
 }

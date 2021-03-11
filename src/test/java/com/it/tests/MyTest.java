@@ -16,12 +16,11 @@ import static com.it.common.Constants.*;
 
 public class MyTest extends BaseTest {
     @Test
-    public void test() throws InterruptedException {
+    public void test(){
         app.login.login(validUser);
         app.dashboard.sendNewMail(); //кликаем создать новое письмо
-        app.newmail.sendMail(validMail);
-
-
-         //Assert.assertEquals(, validUser.email);
+        app.newmail.sendMail(validMail); //метод написания письма из ресурсного файла
+        app.newmail.goToInbox(); //переход во входящие
+        Assert.assertEquals(app.dashboard.chkSubject(),validMail.subject,"All works!"); //проверяем по теме
     }
 }

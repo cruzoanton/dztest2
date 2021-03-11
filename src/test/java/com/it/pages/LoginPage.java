@@ -19,7 +19,9 @@ public class LoginPage extends BasePage{
 
 
     public void login(String userName, String password) {
+        inputLogin.clear();
         inputLogin.sendKeys(userName);
+        inputPassword.clear();
         inputPassword.sendKeys(password);
         btnLogin.click();
     }

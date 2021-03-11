@@ -9,15 +9,15 @@ import static com.it.common.Constants.BASE_URL;
 
 public abstract class BasePage {
     protected static WebDriver driver;
+
     static {
         WebDriverManager.chromedriver().setup();
-        //  System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
 
     public BasePage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 }
